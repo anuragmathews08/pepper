@@ -1,0 +1,77 @@
+.cardBlock {
+  width: 260px;
+  /* max-width: 500px; */
+  height: auto;
+  min-height: 72px;
+  border: 0.2px solid #a4a4a4;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  border-radius: 7px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 5px;
+  padding-bottom: 0;
+  box-sizing: border-box;
+  margin: 15px 0;
+  position: relative;
+  z-index: -90;
+}
+
+.cardBlock__eventIcon {
+  width: 30%;
+  height: 60px;
+  object-fit: contain;
+  border-radius: 5px;
+  background-color: #222831;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cardBlock__eventIcon img {
+  margin: 0;
+  padding: 0;
+  height: 60px;
+}
+
+.eventDetails__name {
+  margin-right: 20px;
+}
+
+.eventDetails__date {
+  font-size: 12px;
+  line-height: 30px;
+  color: gray;
+}
+
+.eventDetails__highlight {
+  font-weight: bold;
+  color: #222831;
+}
+
+@media (min-width: 581px) and (max-width: 780px) {
+  .cardBlock {
+    width: 310px;
+    min-width: 310px;
+    height: 80px;
+  }
+
+  .eventDetails__name h4 {
+    font-size: 2.5vw;
+  }
+
+  .eventDetails__date {
+    line-height: 40px;
+  }
+
+  .eventDetails__date p {
+    font-size: 2vw;
+  }
+
+  .cardBlock__eventIcon {
+    height: 70px;
+  }
+
+  .cardBlock__eventIcon img {
+    height: 70px;
+  }
+}
