@@ -8,7 +8,7 @@
 }
 
 .MenuIcon {
-  font-size: 2.3em !important;
+  font-size: 40px !important;
 }
 .MenuIcon:hover {
   cursor: pointer;
@@ -81,6 +81,7 @@
 
   .navLink {
     padding: 10px;
+    font-size: 1.5vw;
   }
 
   .navLink:hover,
@@ -100,5 +101,12 @@
 
   .navBlock__toggleIcon {
     display: none;
+  }
+}
+
+@media(min-width: 580px) and (max-width: 767px) {
+  .navLink {
+    padding: 10px;
+    font-size: 1.8vw;
   }
 }

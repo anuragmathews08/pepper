@@ -1,0 +1,25 @@
+.button__block {
+    background-color: #F05454;
+    color: #F3F2F2;
+    width: 80vw;
+    max-width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 30px 15px 30px;
+    border-radius: 10px;
+    font-weight: bold;
+    border: none;
+    font-size: 18px;
+}
+
+.button__disabled {
+    background-color: gray;
+}
+.button__disabled:hover {
+    cursor:not-allowed !important;
+}
+
+.button__block:hover {
+    cursor: pointer;
+}

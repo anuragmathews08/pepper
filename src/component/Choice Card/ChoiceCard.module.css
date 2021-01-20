@@ -1,0 +1,38 @@
+.type__eventCard {
+    width: 140px;
+    height: 190px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #cccccc;
+    box-shadow: 0 3px 3px rgba(0,0,0,0.4);
+    padding: 5px;
+    position: relative;
+}
+
+.type__eventCard h3 {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.selected {
+    background-color: #222831;
+    color: #FFFEFE;
+    border: none;
+}
+
+.type__eventCard:hover {
+    cursor: pointer;
+}
+
+@media(min-width: 781px) {
+    .type__eventCard {
+        margin-left: 5vw;
+        margin-right: 5vw;
+    }
+}

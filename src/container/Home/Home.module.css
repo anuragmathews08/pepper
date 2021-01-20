@@ -62,12 +62,11 @@
   align-items: center;
   flex-direction: column;
   margin-top: 20px;
-  width: 100%;
-  height: 8.5vh;
+  width: 99.5%;
+  height: 55px;
   border: none;
-  box-sizing: border-box;
-  padding: 20px;
   padding-top: 15px;
+  padding-bottom: 0;
   box-shadow: 0 -4px 4px rgba(34, 40, 49, 0.4);
   border-top-left-radius: 40px;
   border-top-right-radius: 40px;
@@ -156,7 +155,8 @@
   }
 
   .homeBlock__eventList {
-    height: 14vh;
+    height: 85px;
+    width: 99.5%;
   }
 }
 
@@ -190,7 +190,8 @@
 
   .homeBlock__eventList {
     margin-top: 5.5vh;
-    height: 9vh;
+    height: 85px;
+    width: 99.5%;
   }
 
   .homeBlock__eventList h1 {
