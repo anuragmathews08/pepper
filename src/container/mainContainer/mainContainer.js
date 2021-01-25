@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route } from "react-router-dom";
 
 import ChooseEvent from "../AddEvent/ChooseEvent/ChooseEvent";
 import EnterEvent from "../AddEvent/EnterEvent/EnterEvent";
@@ -10,11 +10,9 @@ function mainContainer() {
   return (
     <BrowserRouter>
       <Header />
-      <Switch>
-        <Route path="/addevent/choose" component={ChooseEvent} />
-        <Route path="/addevent/details" component={EnterEvent} />
-        <Route path="/" component={Home} />
-      </Switch>
+      <Route path="/addevent/details" exact component={EnterEvent} />
+      <Route path="/addevent" exact  component={ChooseEvent} />
+      <Route path="/" exact component={Home} />
     </BrowserRouter>
   );
 }

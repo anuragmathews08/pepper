@@ -12,6 +12,7 @@ function NavBar(props) {
   ) : (
     <MenuIcon className={classes.MenuIcon} onClick={props.menuClick} />
   );
+
   return (
     <div className={classes.navBlock}>
       <div className={classes.navBlock__logo}>
@@ -33,7 +34,7 @@ function NavBar(props) {
           </li>
           <li className={classes.navBlock__navLinks}>
             <NavLink
-              to="/addevent/choose"
+              to="/addevent"
               activeClassName={classes.active}
               className={classes.navLink}
             >

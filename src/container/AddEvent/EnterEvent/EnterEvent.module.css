@@ -1,0 +1,271 @@
+.eventDetail__block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-flow: column;
+  position: relative;
+  z-index: 90;
+  margin-top: 12px;
+  margin-bottom: 30px;
+  height: 100%;
+}
+
+.eventDetail__nav {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 90vw;
+}
+
+.backNavStyle {
+  color: #222831 !important;
+}
+
+.backNavStyle img {
+  position: relative;
+  transform: translateY(24%);
+}
+
+.eventDetail__nav a {
+  color: gray;
+  font-weight: 500;
+  font-size: 4vw;
+  text-decoration: none;
+}
+
+.eventDetail__banner {
+  width: 90vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
+  margin-bottom: 50px;
+}
+
+.banner__box {
+  width: 90%;
+  height: 180px;
+  background-color: #fffefe;
+  border: 1px solid #cccccc;
+  border-radius: 15px;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner__box img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+}
+
+.eventDetail__info {
+  width: 80vw;
+}
+.info__name h3 {
+  color: #222831;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.info__name input {
+  width: 100%;
+  font-size: 20px;
+  border: none;
+}
+
+.info__name input:focus {
+  outline: none;
+}
+
+.info__input {
+  width: 100%;
+  margin-top: 8px;
+  padding: 0 3px 3px 3px;
+  border-bottom: 2px solid #cccccc;
+}
+.info__date {
+  margin-top: 50px;
+  margin-bottom: 60px;
+}
+
+.info__date h3 {
+  letter-spacing: 1px;
+}
+
+.month {
+  display: flex;
+  flex-flow: row;
+  width: 230px;
+  justify-content: space-between;
+  align-items: center;
+}
+.month__input {
+  font-size: 15px;
+  background: none;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  padding: 5px;
+  padding-right: 0;
+  outline: none;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.4);
+}
+
+.month__input option:checked,
+option:focus {
+  background-color: #f05454;
+  color: #fffefe;
+}
+
+.date {
+  display: flex;
+  flex-flow: row;
+  width: 230px;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.input__date {
+  border: 1px solid #cccccc;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  margin-right: 50px;
+}
+
+.input__date input {
+  border: none;
+  outline: none;
+  font-size: 15px;
+  width: 40px;
+  text-align: center;
+}
+.info__number {
+  display: flex;
+  flex-flow: row;
+  width: 240px;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.input__number {
+  border: 1px solid #cccccc;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+}
+
+.input__number input {
+  border: none;
+  outline: none;
+  font-size: 15px;
+  width: 100px;
+  text-align: center;
+}
+
+@media (min-width: 781px) {
+  .eventDetail__nav a {
+    font-size: 2vw;
+  }
+  .backNavStyle img {
+    height: 35px;
+    object-fit: cover;
+  }
+
+  .banner__box {
+    width: 55%;
+    height: 300px;
+  }
+
+  .banner__box img {
+    height: 290px;
+  }
+
+  .info__name h3 {
+    font-size: 2vw;
+    margin-bottom: 20px;
+  }
+
+  .month {
+    font-size: 1.5vw;
+    width: 271px;
+  }
+
+  .date {
+    font-size: 1.5vw;
+    width: 280px;
+  }
+
+  .input__date input {
+    font-size: 18px;
+    width: 50px;
+  }
+
+  .info__number {
+    font-size: 1.5vw;
+    width: 300px;
+  }
+
+  .input__number input {
+    font-size: 18px;
+    width: 120px;
+  }
+}
+
+@media (min-width: 580px) and (max-width: 780px) {
+  .eventDetail__nav a {
+    font-size: 3vw;
+  }
+  .backNavStyle img {
+    height: 35px;
+    object-fit: cover;
+  }
+
+  .banner__box {
+    width: 62%;
+    height: 220px;
+  }
+
+  .banner__box img {
+    height: 210px;
+  }
+
+  .info__name h3 {
+    font-size: 3vw;
+  }
+
+  .month {
+    font-size: 2.5vw;
+    width: 271px;
+  }
+
+  .date {
+    font-size: 2.5vw;
+    width: 280px;
+  }
+
+  .input__date input {
+    font-size: 18px;
+    width: 50px;
+  }
+
+  .info__number {
+    font-size: 2.5vw;
+    width: 300px;
+  }
+
+  .input__number input {
+    font-size: 18px;
+    width: 120px;
+  }
+}

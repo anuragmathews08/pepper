@@ -27,10 +27,15 @@
   height: 70px;
 }
 
-.navBlock__logo img {
+.pepperLogo {
   width: 100px;
   height: auto;
   margin-left: 44%;
+}
+
+.navBlock__logo img {
+  width: 100px;
+  height: auto;
 }
 
 .navBlock__logo {
