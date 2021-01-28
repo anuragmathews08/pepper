@@ -98,10 +98,15 @@
   .navBlock__logo img {
     width: 125px;
     height: auto;
-    margin-left: 0;
   }
+
+  .pepperLogo {
+    margin: 0;
+  } 
+
   .navBlock__logo {
-    width: auto;
+    width: 130px;
+    height: auto;
   }
 
   .navBlock__toggleIcon {

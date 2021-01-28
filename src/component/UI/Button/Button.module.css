@@ -12,6 +12,7 @@
     border: none;
     font-size: 18px;
     letter-spacing: 1px;
+    outline: none;
 }
 
 .button__disabled {

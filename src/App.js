@@ -1,4 +1,4 @@
-import MainContainer from './container/mainContainer/mainContainer';
+import MainContainer from "./container/mainContainer/mainContainer";
 
 function App() {
   return (

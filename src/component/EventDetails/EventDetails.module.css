@@ -145,32 +145,13 @@ option:focus {
   font-size: 15px;
   width: 40px;
   text-align: center;
-}
-.info__number {
-  display: flex;
-  flex-flow: row;
-  width: 240px;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 20px;
+  -moz-appearance: textfield;
 }
 
-.input__number {
-  border: 1px solid #cccccc;
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.4);
-  border-radius: 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 5px;
-}
-
-.input__number input {
-  border: none;
-  outline: none;
-  font-size: 15px;
-  width: 100px;
-  text-align: center;
+.input__date input::-webkit-outer-spin-button,
+.input__date input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 @media (min-width: 781px) {
@@ -210,16 +191,6 @@ option:focus {
     font-size: 18px;
     width: 50px;
   }
-
-  .info__number {
-    font-size: 1.5vw;
-    width: 300px;
-  }
-
-  .input__number input {
-    font-size: 18px;
-    width: 120px;
-  }
 }
 
 @media (min-width: 580px) and (max-width: 780px) {
@@ -257,15 +228,5 @@ option:focus {
   .input__date input {
     font-size: 18px;
     width: 50px;
-  }
-
-  .info__number {
-    font-size: 2.5vw;
-    width: 300px;
-  }
-
-  .input__number input {
-    font-size: 18px;
-    width: 120px;
   }
 }
