@@ -1,6 +1,5 @@
 .cardBlock {
   width: 260px;
-  /* max-width: 500px; */
   height: auto;
   min-height: 72px;
   border: 0.2px solid #a4a4a4;
@@ -8,17 +7,16 @@
   border-radius: 7px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   padding: 5px;
   padding-bottom: 0;
   box-sizing: border-box;
-  margin: 15px 0;
+  margin: 15px 15px;
   position: relative;
-  z-index: -90;
+  z-index: 90;
 }
 
 .cardBlock__eventIcon {
-  width: 30%;
+  width: 65px;
   height: 60px;
   object-fit: contain;
   border-radius: 5px;
@@ -33,8 +31,8 @@
   height: 60px;
 }
 
-.eventDetails__name {
-  margin-right: 20px;
+.cardBlock__eventDetails {
+  margin-left: 10px;
 }
 
 .eventDetails__date {
@@ -47,6 +45,20 @@
   font-weight: bold;
   color: #222831;
 }
+
+.cardBlock__deleteIcon {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  position: absolute;
+  bottom: 0%;
+  right: 0%;
+  color: #222831;
+}
+.cardBlock__deleteIcon:hover{
+  cursor: pointer;
+}
+
 
 @media (min-width: 581px) and (max-width: 780px) {
   .cardBlock {

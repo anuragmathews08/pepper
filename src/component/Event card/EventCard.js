@@ -1,31 +1,58 @@
 import React from "react";
 import classes from "./EventCard.module.css";
-import CakeIconWhite from '../../assets/icons/cake-white.svg';
-// import RingIconWhite from '../../assets/icons/wedding-ring.svg';
+import CakeIconWhite from "../../assets/icons/cake-white.svg";
+import RingIconWhite from "../../assets/icons/wedding-ring.svg";
+import DeleteForeverOutlinedIcon from '@material-ui/icons/DeleteForeverOutlined';
+
+import {connect} from 'react-redux';
+import * as actionCreators from '../../store/actions/actions';
 
 
-const EventCard = () => {
+const EventCard = (props) => {
+  let eventIcon =
+    props.type === "Birthday" ? (
+      <img src={CakeIconWhite} alt="Birthday cake icon" />
+    ) : (
+      <img src={RingIconWhite} alt="Ring icon" />
+    );
+
+    
   return (
     <div className={classes.cardBlock}>
-      <div className={classes.cardBlock__eventIcon}>
-        <img src={CakeIconWhite} alt="Birthday cake icon" />
-        {/* <img src={RingIconWhite} alt="Ring icon" /> */}
-      </div>
+      <div className={classes.cardBlock__eventIcon}>{eventIcon}</div>
 
       <div className={classes.cardBlock__eventDetails}>
         <div className={classes.eventDetails__name}>
-          <h4>Anurag's Birthday</h4>
+          <h4>{props.title}</h4>
         </div>
 
         <div className={classes.eventDetails__date}>
           <p>
             Date :{" "}
-            <span className={classes.eventDetails__highlight}>8 April</span>
+            <span className={classes.eventDetails__highlight}>
+              {props.date} {props.month}
+            </span>
           </p>
+        </div>
+
+        <div className={classes.cardBlock__deleteIcon} onClick={() => props.delEvent(props.title, props.month, props.eList)}>
+          <DeleteForeverOutlinedIcon />
         </div>
       </div>
     </div>
   );
 };
 
-export default EventCard;
+const mapStateToProps = (state) => {
+  return {
+    eList: state.evList.eventList
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    delEvent: (title, month, list) => dispatch(actionCreators.delEvent(title,month,list))
+  };
+};
+ 
+export default connect(mapStateToProps,mapDispatchToProps)(EventCard);

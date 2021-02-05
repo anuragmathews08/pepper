@@ -1,9 +1,50 @@
-import React from "react";
+import React, { useEffect } from "react";
 import classes from "./Home.module.css";
 import HomeImage from "../../assets/illustrations/home-image.svg";
 import EventList from "../../component/EventList/EventList";
+import { connect } from "react-redux";
+import * as actionCreators from "../../store/actions/actions";
 
-function Home() {
+import { db } from "../../firebase";
+
+function Home(props) {
+  let newListObj = [];
+  for (let key in props.eList) {
+    if (props.eList[key].length > 0) {
+      let temp = {
+        [key]: props.eList[key],
+      };
+      newListObj = [...newListObj, temp];
+    }
+  }
+  const initFunc = props.initEventsFunc;
+  useEffect(() => {
+    db.collection("events")
+      .doc("anuragmathews007@gmail.com")
+      .get()
+      .then((doc) => {
+        const obj = doc.data();
+        initFunc(obj);
+      });
+  });
+
+  let displayList = (
+    <div className={classes.homeBlock__emptyList}>
+      <h3>No event added yet</h3>
+    </div>
+  );
+  if (newListObj.length > 0) {
+    displayList = newListObj.map((el, index) => {
+      let month = Object.keys(el)[0];
+      let list = el[month];
+      let d = new Date();
+      let currentyear = d.getFullYear();
+      return (
+        <EventList key={index} month={month} list={list} year={currentyear} />
+      );
+    });
+  }
+
   return (
     <div className={classes.homeBlock}>
       <div className={classes.homeBlock__banner}>
@@ -36,13 +77,21 @@ function Home() {
         <h1>Event List</h1>
         <span className={classes.homeBlock__line}></span>
       </div>
-      <div className={classes.homeBlock__listBox}>
-        <EventList />
-        <EventList />
-        <EventList />
-      </div>
+      <div className={classes.homeBlock__listBox}>{displayList}</div>
     </div>
   );
 }
 
-export default Home;
+const mapStatToProps = (state) => {
+  return {
+    eList: state.evList.eventList,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    initEventsFunc: (events) => dispatch(actionCreators.initEvents(events)),
+  };
+};
+
+export default connect(mapStatToProps, mapDispatchToProps)(Home);

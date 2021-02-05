@@ -11,7 +11,7 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
     switch(action.type) {
-        case actionTypes.ONBIRTHDAY:
+        case actionTypes.ON_BIRTHDAY:
             return {
                 ...state,
                 eventDetails: {
@@ -20,7 +20,7 @@ const reducer = (state = initialState, action) => {
                 }
             }
         
-        case actionTypes.ONANNIVERSARY:
+        case actionTypes.ON_ANNIVERSARY:
             return {
                 ...state,
                 eventDetails: {
@@ -29,7 +29,7 @@ const reducer = (state = initialState, action) => {
                 }
             }
         
-        case actionTypes.SETTITLE: 
+        case actionTypes.SET_TITLE: 
             return {
                 ...state,
                 eventDetails: {
@@ -38,7 +38,7 @@ const reducer = (state = initialState, action) => {
                 }
             }
 
-        case actionTypes.SETMONTH:
+        case actionTypes.SET_MONTH:
             return {
                 ...state,
                 eventDetails: {
@@ -47,7 +47,7 @@ const reducer = (state = initialState, action) => {
                 }
             }
 
-        case actionTypes.SETDATE:
+        case actionTypes.SET_DATE:
             return {
                 ...state,
                 eventDetails: {

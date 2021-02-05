@@ -1,20 +1,36 @@
-import React, { useState } from "react";
-import { Redirect } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Redirect, withRouter } from "react-router-dom";
 
 import { connect } from "react-redux";
-import * as actionTypes from "../../../store/actions/actions";
+import * as actionCreators from "../../../store/actions/actions";
 
 import EventDetails from "../../../component/EventDetails/EventDetails";
+import StoreEvent from "../../../component/StoreEvent/StoreEvent";
 
 function EnterEvent(props) {
   const [sTitle, setSTitle] = useState("");
   const [sMonth, setSMonth] = useState("January");
   const [sDate, setSDate] = useState("");
+  const [storeEvent, setStoreEvent] = useState(false);
+  const [evCreated, setEvCreated] = useState(false);
 
   const createEvent = () => {
     props.setTitle(sTitle);
     props.setMonth(sMonth);
     props.setDate(sDate);
+    setStoreEvent(true);
+  };
+
+  useEffect(() => {
+    if (evCreated) {
+      props.history.replace("/");
+    }
+
+  }, [evCreated, props.history]);
+
+  const EvCreationHandler = () => {
+    setStoreEvent(false);
+    setEvCreated(true);
   };
 
   let eventPage = <Redirect to="/addevent" />;
@@ -31,6 +47,13 @@ function EnterEvent(props) {
           setDate={(val, e) => setSDate(e.target.value)}
           evType={props.evType}
         />
+        {storeEvent ? (
+          <StoreEvent
+            evDet={props.evDetails}
+            storeEventFunction={(details) => props.storeEventFunc(details)}
+            evCreationFunction={() => EvCreationHandler()}
+          />
+        ) : null}
       </>
     );
   }
@@ -40,16 +63,24 @@ function EnterEvent(props) {
 
 const mapStateToProps = (state) => {
   return {
-    evType: state.eventDetails.eventType,
+    evType: state.evDetails.eventDetails.eventType,
+    evDetails: state.evDetails.eventDetails,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    setTitle: (title) => dispatch({ type: actionTypes.SETTITLE, title: title }),
-    setMonth: (month) => dispatch({ type: actionTypes.SETMONTH, month: month }),
-    setDate: (date) => dispatch({ type: actionTypes.SETDATE, date: date }),
+    setTitle: (title) =>
+      dispatch(actionCreators.setTitle(title)),
+    setMonth: (month) =>
+      dispatch(actionCreators.setMonth(month)),
+    setDate: (date) => dispatch(actionCreators.setDate(date)),
+    storeEventFunc: (evDetails) =>
+      dispatch(actionCreators.storeEvent(evDetails)),
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(EnterEvent);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(withRouter(EnterEvent));

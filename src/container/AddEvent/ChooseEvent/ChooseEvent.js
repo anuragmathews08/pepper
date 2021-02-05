@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
-import * as actionTypes from "../../../store/actions/actions";
+import * as actionCreators from "../../../store/actions/actions";
 
 import EventType from "../../../component/EventType/EventType";
 
@@ -53,14 +53,14 @@ function ChooseEvent(props) {
 
 const mapStateToProps = (state) => {
   return {
-    evType: state.eventDetails.eventType,
+    evType: state.evDetails.eventDetails.eventType,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onBirthdaySelect: () => dispatch({ type: actionTypes.ONBIRTHDAY }),
-    onAnniversarySelect: () => dispatch({ type: actionTypes.ONANNIVERSARY }),
+    onBirthdaySelect: () => dispatch(actionCreators.onBirthday()),
+    onAnniversarySelect: () => dispatch(actionCreators.onAnniversary()),
   };
 };
 
