@@ -1,0 +1,50 @@
+.buttonBlock {
+    background-color: #222831;
+    color: #E8E1E1;
+    padding: 7px 20px 7px 20px;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 3px 3px rgba(0,0,0,0.4);
+}
+.buttonBlock:hover{
+    cursor: pointer;
+}
+
+.loginHeading {
+    font-weight: 500;
+}
+
+.buttonBlock img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    color: #E8E1E1;
+    margin-right: 10px;
+}
+
+@media(min-width: 781px) {
+    .loginHeading {
+        font-size: 120%;
+    }
+
+    .buttonBlock img {
+        width: 20px;
+        height: 20px;
+        object-fit: contain;
+    }
+}
+
+@media(min-width: 581px) and (max-width: 780px) {
+    .loginHeading {
+        font-size: 180%;
+    }
+
+    .buttonBlock img {
+        width: 30px;
+        height: 30px;
+        object-fit: contain;
+    }
+}
