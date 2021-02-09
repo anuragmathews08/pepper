@@ -43,9 +43,19 @@ function NavBar(props) {
           </li>
           <li className={classes.navBlock__navLinks}>
             <NavLink
+              to="/profile"
+              activeClassName={classes.active}
+              className={classes.navLink}
+            >
+              Profile
+            </NavLink>
+          </li>
+          <li className={classes.navBlock__navLinks}>
+            <NavLink
               to="/login"
               activeClassName={classes.active}
               className={classes.navLink}
+              onClick={props.btnClick}
             >
               Log Out
             </NavLink>

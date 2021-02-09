@@ -25,7 +25,6 @@ function EnterEvent(props) {
     if (evCreated) {
       props.history.replace("/");
     }
-
   }, [evCreated, props.history]);
 
   const EvCreationHandler = () => {
@@ -50,7 +49,9 @@ function EnterEvent(props) {
         {storeEvent ? (
           <StoreEvent
             evDet={props.evDetails}
-            storeEventFunction={(details) => props.storeEventFunc(details)}
+            storeEventFunction={(details) =>
+              props.storeEventFunc(details, props.uId)
+            }
             evCreationFunction={() => EvCreationHandler()}
           />
         ) : null}
@@ -65,18 +66,17 @@ const mapStateToProps = (state) => {
   return {
     evType: state.evDetails.eventDetails.eventType,
     evDetails: state.evDetails.eventDetails,
+    uId: state.userDetails.user.userID,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    setTitle: (title) =>
-      dispatch(actionCreators.setTitle(title)),
-    setMonth: (month) =>
-      dispatch(actionCreators.setMonth(month)),
+    setTitle: (title) => dispatch(actionCreators.setTitle(title)),
+    setMonth: (month) => dispatch(actionCreators.setMonth(month)),
     setDate: (date) => dispatch(actionCreators.setDate(date)),
-    storeEventFunc: (evDetails) =>
-      dispatch(actionCreators.storeEvent(evDetails)),
+    storeEventFunc: (evDetails, docId) =>
+      dispatch(actionCreators.storeEvent(evDetails, docId)),
   };
 };
 

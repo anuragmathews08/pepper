@@ -1,4 +1,4 @@
-import * as actionTypes from '../actions/actions';
+import * as actionTypes from '../actions/actionTypes';
 
 const initialState = {
     eventDetails: {
@@ -54,7 +54,7 @@ const reducer = (state = initialState, action) => {
                     ...state.eventDetails,
                     eventDate: action.date
                 }
-            }
+            };
 
          default:
              return state;   

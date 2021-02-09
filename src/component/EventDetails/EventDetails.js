@@ -58,7 +58,9 @@ const EventDetails = (props) => {
               value={props.month}
               onChange={(e) => props.setMonth("val", e)}
             >
-              <option value="January" defaultValue>January</option>
+              <option value="January" defaultValue>
+                January
+              </option>
               <option value="February">February</option>
               <option value="March">March</option>
               <option value="April">April</option>

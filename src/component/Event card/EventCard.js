@@ -35,7 +35,7 @@ const EventCard = (props) => {
           </p>
         </div>
 
-        <div className={classes.cardBlock__deleteIcon} onClick={() => props.delEvent(props.title, props.month, props.eList)}>
+        <div className={classes.cardBlock__deleteIcon} onClick={() => props.delEvent(props.title, props.month, props.eList, props.uId)}>
           <DeleteForeverOutlinedIcon />
         </div>
       </div>
@@ -45,13 +45,14 @@ const EventCard = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    eList: state.evList.eventList
+    eList: state.evList.eventList,
+    uId: state.userDetails.user.userID
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    delEvent: (title, month, list) => dispatch(actionCreators.delEvent(title,month,list))
+    delEvent: (title, month, list, docId) => dispatch(actionCreators.delEvent(title,month,list, docId))
   };
 };
  

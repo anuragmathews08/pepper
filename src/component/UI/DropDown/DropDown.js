@@ -19,7 +19,10 @@ const DropDown = (props) => {
           <NavLink to="/addevent" activeClassName={classes.active} className={classes.navLink}  onClick={props.menuClick}>Add Event</NavLink>
         </li>
         <li>
-          <NavLink to="/login" activeClassName={classes.active} className={classes.navLink}  onClick={props.menuClick}>Log Out</NavLink>
+          <NavLink to="/profile" activeClassName={classes.active} className={classes.navLink}  onClick={props.menuClick}>Profile</NavLink>
+        </li>
+        <li>
+          <NavLink to="/login" activeClassName={classes.active} className={classes.navLink}  onClick={props.btnClick}>Log Out</NavLink>
         </li>
       </ul>
     </div>

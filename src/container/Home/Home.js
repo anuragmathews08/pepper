@@ -5,7 +5,7 @@ import EventList from "../../component/EventList/EventList";
 import { connect } from "react-redux";
 import * as actionCreators from "../../store/actions/actions";
 
-import { db } from "../../firebase";
+import { db} from "../../firebase";
 
 function Home(props) {
   let newListObj = [];
@@ -17,15 +17,19 @@ function Home(props) {
       newListObj = [...newListObj, temp];
     }
   }
+
+  const {uId} = props;
   const initFunc = props.initEventsFunc;
   useEffect(() => {
-    db.collection("events")
-      .doc("anuragmathews007@gmail.com")
+    if(uId) {
+      db.collection("events")
+      .doc(uId)
       .get()
       .then((doc) => {
         const obj = doc.data();
         initFunc(obj);
       });
+    }
   });
 
   let displayList = (
@@ -85,6 +89,7 @@ function Home(props) {
 const mapStatToProps = (state) => {
   return {
     eList: state.evList.eventList,
+    uId: state.userDetails.user.userID
   };
 };
 
